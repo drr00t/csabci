@@ -7,7 +7,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Tendermint.ABCI.Types {
+namespace Tendermint.Abci.Types {
 
   /// <summary>Holder for reflection information generated from types/types.proto</summary>
   public static partial class TypesReflection {
@@ -130,36 +130,36 @@ namespace Tendermint.ABCI.Types {
             "aW50LkFCQ0kuVHlwZXMuUmVzcG9uc2VFbmRCbG9ja2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Tendermint.ABCI.Types.CodeType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.Request), global::Tendermint.ABCI.Types.Request.Parser, new[]{ "Echo", "Flush", "Info", "SetOption", "DeliverTx", "CheckTx", "Commit", "Query", "InitChain", "BeginBlock", "EndBlock" }, new[]{ "Value" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestEcho), global::Tendermint.ABCI.Types.RequestEcho.Parser, new[]{ "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestFlush), global::Tendermint.ABCI.Types.RequestFlush.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestInfo), global::Tendermint.ABCI.Types.RequestInfo.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestSetOption), global::Tendermint.ABCI.Types.RequestSetOption.Parser, new[]{ "Key", "Value" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestDeliverTx), global::Tendermint.ABCI.Types.RequestDeliverTx.Parser, new[]{ "Tx" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestCheckTx), global::Tendermint.ABCI.Types.RequestCheckTx.Parser, new[]{ "Tx" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestQuery), global::Tendermint.ABCI.Types.RequestQuery.Parser, new[]{ "Data", "Path", "Height", "Prove" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestCommit), global::Tendermint.ABCI.Types.RequestCommit.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestInitChain), global::Tendermint.ABCI.Types.RequestInitChain.Parser, new[]{ "Validators" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestBeginBlock), global::Tendermint.ABCI.Types.RequestBeginBlock.Parser, new[]{ "Hash", "Header" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.RequestEndBlock), global::Tendermint.ABCI.Types.RequestEndBlock.Parser, new[]{ "Height" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.Response), global::Tendermint.ABCI.Types.Response.Parser, new[]{ "Exception", "Echo", "Flush", "Info", "SetOption", "DeliverTx", "CheckTx", "Commit", "Query", "InitChain", "BeginBlock", "EndBlock" }, new[]{ "Value" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseException), global::Tendermint.ABCI.Types.ResponseException.Parser, new[]{ "Error" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseEcho), global::Tendermint.ABCI.Types.ResponseEcho.Parser, new[]{ "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseFlush), global::Tendermint.ABCI.Types.ResponseFlush.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseInfo), global::Tendermint.ABCI.Types.ResponseInfo.Parser, new[]{ "Data", "Version", "LastBlockHeight", "LastBlockAppHash" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseSetOption), global::Tendermint.ABCI.Types.ResponseSetOption.Parser, new[]{ "Log" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseDeliverTx), global::Tendermint.ABCI.Types.ResponseDeliverTx.Parser, new[]{ "Code", "Data", "Log" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseCheckTx), global::Tendermint.ABCI.Types.ResponseCheckTx.Parser, new[]{ "Code", "Data", "Log" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseQuery), global::Tendermint.ABCI.Types.ResponseQuery.Parser, new[]{ "Code", "Index", "Key", "Value", "Proof", "Height", "Log" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseCommit), global::Tendermint.ABCI.Types.ResponseCommit.Parser, new[]{ "Code", "Data", "Log" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseInitChain), global::Tendermint.ABCI.Types.ResponseInitChain.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseBeginBlock), global::Tendermint.ABCI.Types.ResponseBeginBlock.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.ResponseEndBlock), global::Tendermint.ABCI.Types.ResponseEndBlock.Parser, new[]{ "Diffs" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.Header), global::Tendermint.ABCI.Types.Header.Parser, new[]{ "ChainId", "Height", "Time", "NumTxs", "LastBlockId", "LastCommitHash", "DataHash", "ValidatorsHash", "AppHash" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.BlockID), global::Tendermint.ABCI.Types.BlockID.Parser, new[]{ "Hash", "Parts" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.PartSetHeader), global::Tendermint.ABCI.Types.PartSetHeader.Parser, new[]{ "Total", "Hash" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.ABCI.Types.Validator), global::Tendermint.ABCI.Types.Validator.Parser, new[]{ "PubKey", "Power" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Tendermint.Abci.Types.CodeType), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.Request), global::Tendermint.Abci.Types.Request.Parser, new[]{ "Echo", "Flush", "Info", "SetOption", "DeliverTx", "CheckTx", "Commit", "Query", "InitChain", "BeginBlock", "EndBlock" }, new[]{ "Value" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestEcho), global::Tendermint.Abci.Types.RequestEcho.Parser, new[]{ "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestFlush), global::Tendermint.Abci.Types.RequestFlush.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestInfo), global::Tendermint.Abci.Types.RequestInfo.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestSetOption), global::Tendermint.Abci.Types.RequestSetOption.Parser, new[]{ "Key", "Value" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestDeliverTx), global::Tendermint.Abci.Types.RequestDeliverTx.Parser, new[]{ "Tx" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestCheckTx), global::Tendermint.Abci.Types.RequestCheckTx.Parser, new[]{ "Tx" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestQuery), global::Tendermint.Abci.Types.RequestQuery.Parser, new[]{ "Data", "Path", "Height", "Prove" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestCommit), global::Tendermint.Abci.Types.RequestCommit.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestInitChain), global::Tendermint.Abci.Types.RequestInitChain.Parser, new[]{ "Validators" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestBeginBlock), global::Tendermint.Abci.Types.RequestBeginBlock.Parser, new[]{ "Hash", "Header" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.RequestEndBlock), global::Tendermint.Abci.Types.RequestEndBlock.Parser, new[]{ "Height" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.Response), global::Tendermint.Abci.Types.Response.Parser, new[]{ "Exception", "Echo", "Flush", "Info", "SetOption", "DeliverTx", "CheckTx", "Commit", "Query", "InitChain", "BeginBlock", "EndBlock" }, new[]{ "Value" }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseException), global::Tendermint.Abci.Types.ResponseException.Parser, new[]{ "Error" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseEcho), global::Tendermint.Abci.Types.ResponseEcho.Parser, new[]{ "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseFlush), global::Tendermint.Abci.Types.ResponseFlush.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseInfo), global::Tendermint.Abci.Types.ResponseInfo.Parser, new[]{ "Data", "Version", "LastBlockHeight", "LastBlockAppHash" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseSetOption), global::Tendermint.Abci.Types.ResponseSetOption.Parser, new[]{ "Log" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseDeliverTx), global::Tendermint.Abci.Types.ResponseDeliverTx.Parser, new[]{ "Code", "Data", "Log" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseCheckTx), global::Tendermint.Abci.Types.ResponseCheckTx.Parser, new[]{ "Code", "Data", "Log" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseQuery), global::Tendermint.Abci.Types.ResponseQuery.Parser, new[]{ "Code", "Index", "Key", "Value", "Proof", "Height", "Log" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseCommit), global::Tendermint.Abci.Types.ResponseCommit.Parser, new[]{ "Code", "Data", "Log" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseInitChain), global::Tendermint.Abci.Types.ResponseInitChain.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseBeginBlock), global::Tendermint.Abci.Types.ResponseBeginBlock.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.ResponseEndBlock), global::Tendermint.Abci.Types.ResponseEndBlock.Parser, new[]{ "Diffs" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.Header), global::Tendermint.Abci.Types.Header.Parser, new[]{ "ChainId", "Height", "Time", "NumTxs", "LastBlockId", "LastCommitHash", "DataHash", "ValidatorsHash", "AppHash" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.BlockID), global::Tendermint.Abci.Types.BlockID.Parser, new[]{ "Hash", "Parts" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.PartSetHeader), global::Tendermint.Abci.Types.PartSetHeader.Parser, new[]{ "Total", "Hash" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Tendermint.Abci.Types.Validator), global::Tendermint.Abci.Types.Validator.Parser, new[]{ "PubKey", "Power" }, null, null, null)
           }));
     }
     #endregion
@@ -218,7 +218,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -281,8 +281,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "echo" field.</summary>
     public const int EchoFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestEcho Echo {
-      get { return valueCase_ == ValueOneofCase.Echo ? (global::Tendermint.ABCI.Types.RequestEcho) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestEcho Echo {
+      get { return valueCase_ == ValueOneofCase.Echo ? (global::Tendermint.Abci.Types.RequestEcho) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Echo;
@@ -292,8 +292,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "flush" field.</summary>
     public const int FlushFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestFlush Flush {
-      get { return valueCase_ == ValueOneofCase.Flush ? (global::Tendermint.ABCI.Types.RequestFlush) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestFlush Flush {
+      get { return valueCase_ == ValueOneofCase.Flush ? (global::Tendermint.Abci.Types.RequestFlush) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Flush;
@@ -303,8 +303,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "info" field.</summary>
     public const int InfoFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestInfo Info {
-      get { return valueCase_ == ValueOneofCase.Info ? (global::Tendermint.ABCI.Types.RequestInfo) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestInfo Info {
+      get { return valueCase_ == ValueOneofCase.Info ? (global::Tendermint.Abci.Types.RequestInfo) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Info;
@@ -314,8 +314,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "set_option" field.</summary>
     public const int SetOptionFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestSetOption SetOption {
-      get { return valueCase_ == ValueOneofCase.SetOption ? (global::Tendermint.ABCI.Types.RequestSetOption) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestSetOption SetOption {
+      get { return valueCase_ == ValueOneofCase.SetOption ? (global::Tendermint.Abci.Types.RequestSetOption) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.SetOption;
@@ -325,8 +325,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "deliver_tx" field.</summary>
     public const int DeliverTxFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestDeliverTx DeliverTx {
-      get { return valueCase_ == ValueOneofCase.DeliverTx ? (global::Tendermint.ABCI.Types.RequestDeliverTx) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestDeliverTx DeliverTx {
+      get { return valueCase_ == ValueOneofCase.DeliverTx ? (global::Tendermint.Abci.Types.RequestDeliverTx) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.DeliverTx;
@@ -336,8 +336,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "check_tx" field.</summary>
     public const int CheckTxFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestCheckTx CheckTx {
-      get { return valueCase_ == ValueOneofCase.CheckTx ? (global::Tendermint.ABCI.Types.RequestCheckTx) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestCheckTx CheckTx {
+      get { return valueCase_ == ValueOneofCase.CheckTx ? (global::Tendermint.Abci.Types.RequestCheckTx) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.CheckTx;
@@ -347,8 +347,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "commit" field.</summary>
     public const int CommitFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestCommit Commit {
-      get { return valueCase_ == ValueOneofCase.Commit ? (global::Tendermint.ABCI.Types.RequestCommit) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestCommit Commit {
+      get { return valueCase_ == ValueOneofCase.Commit ? (global::Tendermint.Abci.Types.RequestCommit) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Commit;
@@ -358,8 +358,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "query" field.</summary>
     public const int QueryFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestQuery Query {
-      get { return valueCase_ == ValueOneofCase.Query ? (global::Tendermint.ABCI.Types.RequestQuery) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestQuery Query {
+      get { return valueCase_ == ValueOneofCase.Query ? (global::Tendermint.Abci.Types.RequestQuery) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Query;
@@ -369,8 +369,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "init_chain" field.</summary>
     public const int InitChainFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestInitChain InitChain {
-      get { return valueCase_ == ValueOneofCase.InitChain ? (global::Tendermint.ABCI.Types.RequestInitChain) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestInitChain InitChain {
+      get { return valueCase_ == ValueOneofCase.InitChain ? (global::Tendermint.Abci.Types.RequestInitChain) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.InitChain;
@@ -380,8 +380,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "begin_block" field.</summary>
     public const int BeginBlockFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestBeginBlock BeginBlock {
-      get { return valueCase_ == ValueOneofCase.BeginBlock ? (global::Tendermint.ABCI.Types.RequestBeginBlock) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestBeginBlock BeginBlock {
+      get { return valueCase_ == ValueOneofCase.BeginBlock ? (global::Tendermint.Abci.Types.RequestBeginBlock) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.BeginBlock;
@@ -391,8 +391,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "end_block" field.</summary>
     public const int EndBlockFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.RequestEndBlock EndBlock {
-      get { return valueCase_ == ValueOneofCase.EndBlock ? (global::Tendermint.ABCI.Types.RequestEndBlock) value_ : null; }
+    public global::Tendermint.Abci.Types.RequestEndBlock EndBlock {
+      get { return valueCase_ == ValueOneofCase.EndBlock ? (global::Tendermint.Abci.Types.RequestEndBlock) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.EndBlock;
@@ -617,7 +617,7 @@ namespace Tendermint.ABCI.Types {
             input.SkipLastField();
             break;
           case 10: {
-            global::Tendermint.ABCI.Types.RequestEcho subBuilder = new global::Tendermint.ABCI.Types.RequestEcho();
+            global::Tendermint.Abci.Types.RequestEcho subBuilder = new global::Tendermint.Abci.Types.RequestEcho();
             if (valueCase_ == ValueOneofCase.Echo) {
               subBuilder.MergeFrom(Echo);
             }
@@ -626,7 +626,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 18: {
-            global::Tendermint.ABCI.Types.RequestFlush subBuilder = new global::Tendermint.ABCI.Types.RequestFlush();
+            global::Tendermint.Abci.Types.RequestFlush subBuilder = new global::Tendermint.Abci.Types.RequestFlush();
             if (valueCase_ == ValueOneofCase.Flush) {
               subBuilder.MergeFrom(Flush);
             }
@@ -635,7 +635,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 26: {
-            global::Tendermint.ABCI.Types.RequestInfo subBuilder = new global::Tendermint.ABCI.Types.RequestInfo();
+            global::Tendermint.Abci.Types.RequestInfo subBuilder = new global::Tendermint.Abci.Types.RequestInfo();
             if (valueCase_ == ValueOneofCase.Info) {
               subBuilder.MergeFrom(Info);
             }
@@ -644,7 +644,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 34: {
-            global::Tendermint.ABCI.Types.RequestSetOption subBuilder = new global::Tendermint.ABCI.Types.RequestSetOption();
+            global::Tendermint.Abci.Types.RequestSetOption subBuilder = new global::Tendermint.Abci.Types.RequestSetOption();
             if (valueCase_ == ValueOneofCase.SetOption) {
               subBuilder.MergeFrom(SetOption);
             }
@@ -653,7 +653,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 42: {
-            global::Tendermint.ABCI.Types.RequestDeliverTx subBuilder = new global::Tendermint.ABCI.Types.RequestDeliverTx();
+            global::Tendermint.Abci.Types.RequestDeliverTx subBuilder = new global::Tendermint.Abci.Types.RequestDeliverTx();
             if (valueCase_ == ValueOneofCase.DeliverTx) {
               subBuilder.MergeFrom(DeliverTx);
             }
@@ -662,7 +662,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 50: {
-            global::Tendermint.ABCI.Types.RequestCheckTx subBuilder = new global::Tendermint.ABCI.Types.RequestCheckTx();
+            global::Tendermint.Abci.Types.RequestCheckTx subBuilder = new global::Tendermint.Abci.Types.RequestCheckTx();
             if (valueCase_ == ValueOneofCase.CheckTx) {
               subBuilder.MergeFrom(CheckTx);
             }
@@ -671,7 +671,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 58: {
-            global::Tendermint.ABCI.Types.RequestCommit subBuilder = new global::Tendermint.ABCI.Types.RequestCommit();
+            global::Tendermint.Abci.Types.RequestCommit subBuilder = new global::Tendermint.Abci.Types.RequestCommit();
             if (valueCase_ == ValueOneofCase.Commit) {
               subBuilder.MergeFrom(Commit);
             }
@@ -680,7 +680,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 66: {
-            global::Tendermint.ABCI.Types.RequestQuery subBuilder = new global::Tendermint.ABCI.Types.RequestQuery();
+            global::Tendermint.Abci.Types.RequestQuery subBuilder = new global::Tendermint.Abci.Types.RequestQuery();
             if (valueCase_ == ValueOneofCase.Query) {
               subBuilder.MergeFrom(Query);
             }
@@ -689,7 +689,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 74: {
-            global::Tendermint.ABCI.Types.RequestInitChain subBuilder = new global::Tendermint.ABCI.Types.RequestInitChain();
+            global::Tendermint.Abci.Types.RequestInitChain subBuilder = new global::Tendermint.Abci.Types.RequestInitChain();
             if (valueCase_ == ValueOneofCase.InitChain) {
               subBuilder.MergeFrom(InitChain);
             }
@@ -698,7 +698,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 82: {
-            global::Tendermint.ABCI.Types.RequestBeginBlock subBuilder = new global::Tendermint.ABCI.Types.RequestBeginBlock();
+            global::Tendermint.Abci.Types.RequestBeginBlock subBuilder = new global::Tendermint.Abci.Types.RequestBeginBlock();
             if (valueCase_ == ValueOneofCase.BeginBlock) {
               subBuilder.MergeFrom(BeginBlock);
             }
@@ -707,7 +707,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 90: {
-            global::Tendermint.ABCI.Types.RequestEndBlock subBuilder = new global::Tendermint.ABCI.Types.RequestEndBlock();
+            global::Tendermint.Abci.Types.RequestEndBlock subBuilder = new global::Tendermint.Abci.Types.RequestEndBlock();
             if (valueCase_ == ValueOneofCase.EndBlock) {
               subBuilder.MergeFrom(EndBlock);
             }
@@ -728,7 +728,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -845,7 +845,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -934,7 +934,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1023,7 +1023,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1168,7 +1168,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1285,7 +1285,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1402,7 +1402,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1603,7 +1603,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1692,7 +1692,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1719,11 +1719,11 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "validators" field.</summary>
     public const int ValidatorsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Tendermint.ABCI.Types.Validator> _repeated_validators_codec
-        = pb::FieldCodec.ForMessage(10, global::Tendermint.ABCI.Types.Validator.Parser);
-    private readonly pbc::RepeatedField<global::Tendermint.ABCI.Types.Validator> validators_ = new pbc::RepeatedField<global::Tendermint.ABCI.Types.Validator>();
+    private static readonly pb::FieldCodec<global::Tendermint.Abci.Types.Validator> _repeated_validators_codec
+        = pb::FieldCodec.ForMessage(10, global::Tendermint.Abci.Types.Validator.Parser);
+    private readonly pbc::RepeatedField<global::Tendermint.Abci.Types.Validator> validators_ = new pbc::RepeatedField<global::Tendermint.Abci.Types.Validator>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Tendermint.ABCI.Types.Validator> Validators {
+    public pbc::RepeatedField<global::Tendermint.Abci.Types.Validator> Validators {
       get { return validators_; }
     }
 
@@ -1801,7 +1801,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1840,9 +1840,9 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "header" field.</summary>
     public const int HeaderFieldNumber = 2;
-    private global::Tendermint.ABCI.Types.Header header_;
+    private global::Tendermint.Abci.Types.Header header_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.Header Header {
+    public global::Tendermint.Abci.Types.Header Header {
       get { return header_; }
       set {
         header_ = value;
@@ -1914,7 +1914,7 @@ namespace Tendermint.ABCI.Types {
       }
       if (other.header_ != null) {
         if (header_ == null) {
-          header_ = new global::Tendermint.ABCI.Types.Header();
+          header_ = new global::Tendermint.Abci.Types.Header();
         }
         Header.MergeFrom(other.Header);
       }
@@ -1934,7 +1934,7 @@ namespace Tendermint.ABCI.Types {
           }
           case 18: {
             if (header_ == null) {
-              header_ = new global::Tendermint.ABCI.Types.Header();
+              header_ = new global::Tendermint.Abci.Types.Header();
             }
             input.ReadMessage(header_);
             break;
@@ -1952,7 +1952,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2069,7 +2069,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2135,8 +2135,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "exception" field.</summary>
     public const int ExceptionFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseException Exception {
-      get { return valueCase_ == ValueOneofCase.Exception ? (global::Tendermint.ABCI.Types.ResponseException) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseException Exception {
+      get { return valueCase_ == ValueOneofCase.Exception ? (global::Tendermint.Abci.Types.ResponseException) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Exception;
@@ -2146,8 +2146,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "echo" field.</summary>
     public const int EchoFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseEcho Echo {
-      get { return valueCase_ == ValueOneofCase.Echo ? (global::Tendermint.ABCI.Types.ResponseEcho) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseEcho Echo {
+      get { return valueCase_ == ValueOneofCase.Echo ? (global::Tendermint.Abci.Types.ResponseEcho) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Echo;
@@ -2157,8 +2157,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "flush" field.</summary>
     public const int FlushFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseFlush Flush {
-      get { return valueCase_ == ValueOneofCase.Flush ? (global::Tendermint.ABCI.Types.ResponseFlush) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseFlush Flush {
+      get { return valueCase_ == ValueOneofCase.Flush ? (global::Tendermint.Abci.Types.ResponseFlush) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Flush;
@@ -2168,8 +2168,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "info" field.</summary>
     public const int InfoFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseInfo Info {
-      get { return valueCase_ == ValueOneofCase.Info ? (global::Tendermint.ABCI.Types.ResponseInfo) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseInfo Info {
+      get { return valueCase_ == ValueOneofCase.Info ? (global::Tendermint.Abci.Types.ResponseInfo) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Info;
@@ -2179,8 +2179,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "set_option" field.</summary>
     public const int SetOptionFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseSetOption SetOption {
-      get { return valueCase_ == ValueOneofCase.SetOption ? (global::Tendermint.ABCI.Types.ResponseSetOption) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseSetOption SetOption {
+      get { return valueCase_ == ValueOneofCase.SetOption ? (global::Tendermint.Abci.Types.ResponseSetOption) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.SetOption;
@@ -2190,8 +2190,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "deliver_tx" field.</summary>
     public const int DeliverTxFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseDeliverTx DeliverTx {
-      get { return valueCase_ == ValueOneofCase.DeliverTx ? (global::Tendermint.ABCI.Types.ResponseDeliverTx) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseDeliverTx DeliverTx {
+      get { return valueCase_ == ValueOneofCase.DeliverTx ? (global::Tendermint.Abci.Types.ResponseDeliverTx) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.DeliverTx;
@@ -2201,8 +2201,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "check_tx" field.</summary>
     public const int CheckTxFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseCheckTx CheckTx {
-      get { return valueCase_ == ValueOneofCase.CheckTx ? (global::Tendermint.ABCI.Types.ResponseCheckTx) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseCheckTx CheckTx {
+      get { return valueCase_ == ValueOneofCase.CheckTx ? (global::Tendermint.Abci.Types.ResponseCheckTx) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.CheckTx;
@@ -2212,8 +2212,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "commit" field.</summary>
     public const int CommitFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseCommit Commit {
-      get { return valueCase_ == ValueOneofCase.Commit ? (global::Tendermint.ABCI.Types.ResponseCommit) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseCommit Commit {
+      get { return valueCase_ == ValueOneofCase.Commit ? (global::Tendermint.Abci.Types.ResponseCommit) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Commit;
@@ -2223,8 +2223,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "query" field.</summary>
     public const int QueryFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseQuery Query {
-      get { return valueCase_ == ValueOneofCase.Query ? (global::Tendermint.ABCI.Types.ResponseQuery) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseQuery Query {
+      get { return valueCase_ == ValueOneofCase.Query ? (global::Tendermint.Abci.Types.ResponseQuery) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.Query;
@@ -2234,8 +2234,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "init_chain" field.</summary>
     public const int InitChainFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseInitChain InitChain {
-      get { return valueCase_ == ValueOneofCase.InitChain ? (global::Tendermint.ABCI.Types.ResponseInitChain) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseInitChain InitChain {
+      get { return valueCase_ == ValueOneofCase.InitChain ? (global::Tendermint.Abci.Types.ResponseInitChain) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.InitChain;
@@ -2245,8 +2245,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "begin_block" field.</summary>
     public const int BeginBlockFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseBeginBlock BeginBlock {
-      get { return valueCase_ == ValueOneofCase.BeginBlock ? (global::Tendermint.ABCI.Types.ResponseBeginBlock) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseBeginBlock BeginBlock {
+      get { return valueCase_ == ValueOneofCase.BeginBlock ? (global::Tendermint.Abci.Types.ResponseBeginBlock) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.BeginBlock;
@@ -2256,8 +2256,8 @@ namespace Tendermint.ABCI.Types {
     /// <summary>Field number for the "end_block" field.</summary>
     public const int EndBlockFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.ResponseEndBlock EndBlock {
-      get { return valueCase_ == ValueOneofCase.EndBlock ? (global::Tendermint.ABCI.Types.ResponseEndBlock) value_ : null; }
+    public global::Tendermint.Abci.Types.ResponseEndBlock EndBlock {
+      get { return valueCase_ == ValueOneofCase.EndBlock ? (global::Tendermint.Abci.Types.ResponseEndBlock) value_ : null; }
       set {
         value_ = value;
         valueCase_ = value == null ? ValueOneofCase.None : ValueOneofCase.EndBlock;
@@ -2495,7 +2495,7 @@ namespace Tendermint.ABCI.Types {
             input.SkipLastField();
             break;
           case 10: {
-            global::Tendermint.ABCI.Types.ResponseException subBuilder = new global::Tendermint.ABCI.Types.ResponseException();
+            global::Tendermint.Abci.Types.ResponseException subBuilder = new global::Tendermint.Abci.Types.ResponseException();
             if (valueCase_ == ValueOneofCase.Exception) {
               subBuilder.MergeFrom(Exception);
             }
@@ -2504,7 +2504,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 18: {
-            global::Tendermint.ABCI.Types.ResponseEcho subBuilder = new global::Tendermint.ABCI.Types.ResponseEcho();
+            global::Tendermint.Abci.Types.ResponseEcho subBuilder = new global::Tendermint.Abci.Types.ResponseEcho();
             if (valueCase_ == ValueOneofCase.Echo) {
               subBuilder.MergeFrom(Echo);
             }
@@ -2513,7 +2513,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 26: {
-            global::Tendermint.ABCI.Types.ResponseFlush subBuilder = new global::Tendermint.ABCI.Types.ResponseFlush();
+            global::Tendermint.Abci.Types.ResponseFlush subBuilder = new global::Tendermint.Abci.Types.ResponseFlush();
             if (valueCase_ == ValueOneofCase.Flush) {
               subBuilder.MergeFrom(Flush);
             }
@@ -2522,7 +2522,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 34: {
-            global::Tendermint.ABCI.Types.ResponseInfo subBuilder = new global::Tendermint.ABCI.Types.ResponseInfo();
+            global::Tendermint.Abci.Types.ResponseInfo subBuilder = new global::Tendermint.Abci.Types.ResponseInfo();
             if (valueCase_ == ValueOneofCase.Info) {
               subBuilder.MergeFrom(Info);
             }
@@ -2531,7 +2531,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 42: {
-            global::Tendermint.ABCI.Types.ResponseSetOption subBuilder = new global::Tendermint.ABCI.Types.ResponseSetOption();
+            global::Tendermint.Abci.Types.ResponseSetOption subBuilder = new global::Tendermint.Abci.Types.ResponseSetOption();
             if (valueCase_ == ValueOneofCase.SetOption) {
               subBuilder.MergeFrom(SetOption);
             }
@@ -2540,7 +2540,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 50: {
-            global::Tendermint.ABCI.Types.ResponseDeliverTx subBuilder = new global::Tendermint.ABCI.Types.ResponseDeliverTx();
+            global::Tendermint.Abci.Types.ResponseDeliverTx subBuilder = new global::Tendermint.Abci.Types.ResponseDeliverTx();
             if (valueCase_ == ValueOneofCase.DeliverTx) {
               subBuilder.MergeFrom(DeliverTx);
             }
@@ -2549,7 +2549,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 58: {
-            global::Tendermint.ABCI.Types.ResponseCheckTx subBuilder = new global::Tendermint.ABCI.Types.ResponseCheckTx();
+            global::Tendermint.Abci.Types.ResponseCheckTx subBuilder = new global::Tendermint.Abci.Types.ResponseCheckTx();
             if (valueCase_ == ValueOneofCase.CheckTx) {
               subBuilder.MergeFrom(CheckTx);
             }
@@ -2558,7 +2558,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 66: {
-            global::Tendermint.ABCI.Types.ResponseCommit subBuilder = new global::Tendermint.ABCI.Types.ResponseCommit();
+            global::Tendermint.Abci.Types.ResponseCommit subBuilder = new global::Tendermint.Abci.Types.ResponseCommit();
             if (valueCase_ == ValueOneofCase.Commit) {
               subBuilder.MergeFrom(Commit);
             }
@@ -2567,7 +2567,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 74: {
-            global::Tendermint.ABCI.Types.ResponseQuery subBuilder = new global::Tendermint.ABCI.Types.ResponseQuery();
+            global::Tendermint.Abci.Types.ResponseQuery subBuilder = new global::Tendermint.Abci.Types.ResponseQuery();
             if (valueCase_ == ValueOneofCase.Query) {
               subBuilder.MergeFrom(Query);
             }
@@ -2576,7 +2576,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 82: {
-            global::Tendermint.ABCI.Types.ResponseInitChain subBuilder = new global::Tendermint.ABCI.Types.ResponseInitChain();
+            global::Tendermint.Abci.Types.ResponseInitChain subBuilder = new global::Tendermint.Abci.Types.ResponseInitChain();
             if (valueCase_ == ValueOneofCase.InitChain) {
               subBuilder.MergeFrom(InitChain);
             }
@@ -2585,7 +2585,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 90: {
-            global::Tendermint.ABCI.Types.ResponseBeginBlock subBuilder = new global::Tendermint.ABCI.Types.ResponseBeginBlock();
+            global::Tendermint.Abci.Types.ResponseBeginBlock subBuilder = new global::Tendermint.Abci.Types.ResponseBeginBlock();
             if (valueCase_ == ValueOneofCase.BeginBlock) {
               subBuilder.MergeFrom(BeginBlock);
             }
@@ -2594,7 +2594,7 @@ namespace Tendermint.ABCI.Types {
             break;
           }
           case 98: {
-            global::Tendermint.ABCI.Types.ResponseEndBlock subBuilder = new global::Tendermint.ABCI.Types.ResponseEndBlock();
+            global::Tendermint.Abci.Types.ResponseEndBlock subBuilder = new global::Tendermint.Abci.Types.ResponseEndBlock();
             if (valueCase_ == ValueOneofCase.EndBlock) {
               subBuilder.MergeFrom(EndBlock);
             }
@@ -2615,7 +2615,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2732,7 +2732,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2849,7 +2849,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2938,7 +2938,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3139,7 +3139,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3256,7 +3256,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3285,9 +3285,9 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "code" field.</summary>
     public const int CodeFieldNumber = 1;
-    private global::Tendermint.ABCI.Types.CodeType code_ = 0;
+    private global::Tendermint.Abci.Types.CodeType code_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.CodeType Code {
+    public global::Tendermint.Abci.Types.CodeType Code {
       get { return code_; }
       set {
         code_ = value;
@@ -3405,7 +3405,7 @@ namespace Tendermint.ABCI.Types {
             input.SkipLastField();
             break;
           case 8: {
-            code_ = (global::Tendermint.ABCI.Types.CodeType) input.ReadEnum();
+            code_ = (global::Tendermint.Abci.Types.CodeType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -3429,7 +3429,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3458,9 +3458,9 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "code" field.</summary>
     public const int CodeFieldNumber = 1;
-    private global::Tendermint.ABCI.Types.CodeType code_ = 0;
+    private global::Tendermint.Abci.Types.CodeType code_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.CodeType Code {
+    public global::Tendermint.Abci.Types.CodeType Code {
       get { return code_; }
       set {
         code_ = value;
@@ -3578,7 +3578,7 @@ namespace Tendermint.ABCI.Types {
             input.SkipLastField();
             break;
           case 8: {
-            code_ = (global::Tendermint.ABCI.Types.CodeType) input.ReadEnum();
+            code_ = (global::Tendermint.Abci.Types.CodeType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -3602,7 +3602,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3635,9 +3635,9 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "code" field.</summary>
     public const int CodeFieldNumber = 1;
-    private global::Tendermint.ABCI.Types.CodeType code_ = 0;
+    private global::Tendermint.Abci.Types.CodeType code_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.CodeType Code {
+    public global::Tendermint.Abci.Types.CodeType Code {
       get { return code_; }
       set {
         code_ = value;
@@ -3847,7 +3847,7 @@ namespace Tendermint.ABCI.Types {
             input.SkipLastField();
             break;
           case 8: {
-            code_ = (global::Tendermint.ABCI.Types.CodeType) input.ReadEnum();
+            code_ = (global::Tendermint.Abci.Types.CodeType) input.ReadEnum();
             break;
           }
           case 16: {
@@ -3887,7 +3887,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3916,9 +3916,9 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "code" field.</summary>
     public const int CodeFieldNumber = 1;
-    private global::Tendermint.ABCI.Types.CodeType code_ = 0;
+    private global::Tendermint.Abci.Types.CodeType code_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.CodeType Code {
+    public global::Tendermint.Abci.Types.CodeType Code {
       get { return code_; }
       set {
         code_ = value;
@@ -4036,7 +4036,7 @@ namespace Tendermint.ABCI.Types {
             input.SkipLastField();
             break;
           case 8: {
-            code_ = (global::Tendermint.ABCI.Types.CodeType) input.ReadEnum();
+            code_ = (global::Tendermint.Abci.Types.CodeType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -4060,7 +4060,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4149,7 +4149,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4238,7 +4238,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4265,11 +4265,11 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "diffs" field.</summary>
     public const int DiffsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Tendermint.ABCI.Types.Validator> _repeated_diffs_codec
-        = pb::FieldCodec.ForMessage(10, global::Tendermint.ABCI.Types.Validator.Parser);
-    private readonly pbc::RepeatedField<global::Tendermint.ABCI.Types.Validator> diffs_ = new pbc::RepeatedField<global::Tendermint.ABCI.Types.Validator>();
+    private static readonly pb::FieldCodec<global::Tendermint.Abci.Types.Validator> _repeated_diffs_codec
+        = pb::FieldCodec.ForMessage(10, global::Tendermint.Abci.Types.Validator.Parser);
+    private readonly pbc::RepeatedField<global::Tendermint.Abci.Types.Validator> diffs_ = new pbc::RepeatedField<global::Tendermint.Abci.Types.Validator>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Tendermint.ABCI.Types.Validator> Diffs {
+    public pbc::RepeatedField<global::Tendermint.Abci.Types.Validator> Diffs {
       get { return diffs_; }
     }
 
@@ -4347,7 +4347,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4426,9 +4426,9 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "last_block_id" field.</summary>
     public const int LastBlockIdFieldNumber = 5;
-    private global::Tendermint.ABCI.Types.BlockID lastBlockId_;
+    private global::Tendermint.Abci.Types.BlockID lastBlockId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.BlockID LastBlockId {
+    public global::Tendermint.Abci.Types.BlockID LastBlockId {
       get { return lastBlockId_; }
       set {
         lastBlockId_ = value;
@@ -4616,7 +4616,7 @@ namespace Tendermint.ABCI.Types {
       }
       if (other.lastBlockId_ != null) {
         if (lastBlockId_ == null) {
-          lastBlockId_ = new global::Tendermint.ABCI.Types.BlockID();
+          lastBlockId_ = new global::Tendermint.Abci.Types.BlockID();
         }
         LastBlockId.MergeFrom(other.LastBlockId);
       }
@@ -4660,7 +4660,7 @@ namespace Tendermint.ABCI.Types {
           }
           case 42: {
             if (lastBlockId_ == null) {
-              lastBlockId_ = new global::Tendermint.ABCI.Types.BlockID();
+              lastBlockId_ = new global::Tendermint.Abci.Types.BlockID();
             }
             input.ReadMessage(lastBlockId_);
             break;
@@ -4694,7 +4694,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4733,9 +4733,9 @@ namespace Tendermint.ABCI.Types {
 
     /// <summary>Field number for the "parts" field.</summary>
     public const int PartsFieldNumber = 2;
-    private global::Tendermint.ABCI.Types.PartSetHeader parts_;
+    private global::Tendermint.Abci.Types.PartSetHeader parts_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Tendermint.ABCI.Types.PartSetHeader Parts {
+    public global::Tendermint.Abci.Types.PartSetHeader Parts {
       get { return parts_; }
       set {
         parts_ = value;
@@ -4807,7 +4807,7 @@ namespace Tendermint.ABCI.Types {
       }
       if (other.parts_ != null) {
         if (parts_ == null) {
-          parts_ = new global::Tendermint.ABCI.Types.PartSetHeader();
+          parts_ = new global::Tendermint.Abci.Types.PartSetHeader();
         }
         Parts.MergeFrom(other.Parts);
       }
@@ -4827,7 +4827,7 @@ namespace Tendermint.ABCI.Types {
           }
           case 18: {
             if (parts_ == null) {
-              parts_ = new global::Tendermint.ABCI.Types.PartSetHeader();
+              parts_ = new global::Tendermint.Abci.Types.PartSetHeader();
             }
             input.ReadMessage(parts_);
             break;
@@ -4845,7 +4845,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4990,7 +4990,7 @@ namespace Tendermint.ABCI.Types {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Tendermint.ABCI.Types.TypesReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Tendermint.Abci.Types.TypesReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
