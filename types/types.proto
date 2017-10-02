@@ -1,5 +1,5 @@
 syntax = "proto3";
-package Tendermint.ABCI.Types;
+package Tendermint.Abci.Types;
 
 // This file is copied from http://github.com/tendermint/abci
 
@@ -73,6 +73,7 @@ message RequestFlush {
 }
 
 message RequestInfo {
+    string version = 1;
 }
 
 message RequestSetOption{
