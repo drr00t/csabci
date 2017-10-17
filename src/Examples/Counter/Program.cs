@@ -4,15 +4,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
 using Grpc.Core;
+using Grpc.Core.Logging;
+
 using Tendermint.Abci.Types;
 
-namespace Tendermint.Abci.Examples
+namespace Tendermint.Abci.Examples.Counter
 {
     class Program
     {
         const Int32 Port = 46658;
         static void Main(string[] args)
         {
+            // Server Startup
+            GrpcEnvironment.SetLogger(new ConsoleLogger()); // show inner log
+
             Server server = new Server
             {
                 Services = { ABCIApplication.BindService(new CounterApp()) },

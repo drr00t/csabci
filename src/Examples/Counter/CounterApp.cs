@@ -4,12 +4,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
 using Grpc.Core;
+using Grpc.Core.Logging;
 using Tendermint.Abci.Types;
 
 namespace Tendermint.Abci.Examples
 {
     public class CounterApp : ABCIApplication.ABCIApplicationBase
     {
+        static readonly ILogger Logger = GrpcEnvironment.Logger.ForType<CounterApp>();
         private int hashCount = 0;
         private int txCount = 0;
 
@@ -20,7 +22,7 @@ namespace Tendermint.Abci.Examples
             if (tx.Length <= 4)
             {
                 Int32 txCheck = Int32.Parse(tx.ToString());
-                // Console.WriteLine("CheckTx: " + txCheck);
+                Logger.Debug("CheckTx: " + txCheck);
                 var msg = "Invalid nonce. Expected >= ${txCount}, got ${txCheck}";
 
                 if (txCheck < txCount)
@@ -35,7 +37,7 @@ namespace Tendermint.Abci.Examples
                 }
             }
 
-            // Console.WriteLine("CheckTx: OK");
+            Logger.Debug("CheckTx: OK");
 
             return Task.FromResult(new ResponseCheckTx
             {
@@ -48,7 +50,7 @@ namespace Tendermint.Abci.Examples
             var tx = request.Tx;
             var data = tx.ToBase64();
 
-            // Console.WriteLine("DeliverTx: ${data}");
+            Logger.Debug("DeliverTx: ${data}");
 
             if (tx.Length == 0)
             {
@@ -82,7 +84,7 @@ namespace Tendermint.Abci.Examples
 
             txCount += 1;
 
-            // Console.WriteLine("DeliverTx - txCount increment: ${txCount}");
+            Logger.Debug("DeliverTx - txCount increment: ${txCount}");
 
             return Task.FromResult(new ResponseDeliverTx
             {
@@ -120,7 +122,8 @@ namespace Tendermint.Abci.Examples
 
         public override Task<ResponseEcho> Echo(RequestEcho request, ServerCallContext context)
         {
-            // Console.WriteLine("Echo: " + request.Message);
+            Logger.Debug("Echo: " + request.Message);
+
             return Task.FromResult(new ResponseEcho
             {
                 Message = request.Message
@@ -139,7 +142,8 @@ namespace Tendermint.Abci.Examples
         {
             //var data = request.Data.;
 
-            // Console.WriteLine("Query: " + request.Data);
+            Logger.Debug("Query: " + request.Data);
+
             return Task.FromResult(new ResponseQuery
             {
                 Code = CodeType.Ok
@@ -148,13 +152,14 @@ namespace Tendermint.Abci.Examples
 
         public override Task<ResponseSetOption> SetOption(RequestSetOption request, ServerCallContext context)
         {
-            // Console.WriteLine("SetOption: " + request.GetHashCode());
+            Logger.Debug("SetOption: " + request.GetHashCode());
+
             return Task.FromResult(new ResponseSetOption());
         }
 
         public override Task<ResponseInitChain> InitChain(RequestInitChain request, ServerCallContext context)
         {
-            // Console.WriteLine("Echo: " + request.Message);
+            Logger.Debug("InitChain.");
             return Task.FromResult(new ResponseInitChain());
         }
     }

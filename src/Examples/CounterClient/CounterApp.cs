@@ -1,161 +1,77 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Google.Protobuf;
 using Grpc.Core;
 using Tendermint.Abci.Types;
 
-namespace Tendermint.Abci.Examples
+namespace Tendermint.Abci.Examples.CounterClient
 {
-    public class CounterApp : ABCIApplicationClient
+    public class CounterClientApp : ABCIApplication.ABCIApplicationClient
     {
         private int hashCount = 0;
         private int txCount = 0;
 
-        public override Task<ResponseCheckTx> CheckTx(RequestCheckTx request, ServerCallContext context)
+        public override ResponseBeginBlock BeginBlock(RequestBeginBlock request, CallOptions options)
         {
-            var tx = request.Tx;
-
-            if (tx.Length <= 4)
-            {
-                Int32 txCheck = Int32.Parse(tx.ToString());
-                // Console.WriteLine("CheckTx: " + txCheck);
-                var msg = "Invalid nonce. Expected >= ${txCount}, got ${txCheck}";
-
-                if (txCheck < txCount)
-                {
-                    Console.WriteLine("CheckTx ERROR: " + msg);
-
-                    return Task.FromResult(new ResponseCheckTx
-                    {
-                        Code = CodeType.BadNonce,
-                        Log = msg
-                    });
-                }
-            }
-
-            // Console.WriteLine("CheckTx: OK");
-
-            return Task.FromResult(new ResponseCheckTx
-            {
-                Code = CodeType.Ok
-            });
+            return base.BeginBlock(request, options);
         }
 
-        public override Task<ResponseDeliverTx> DeliverTx(RequestDeliverTx request, ServerCallContext context)
+        public override ResponseCheckTx CheckTx(RequestCheckTx request, CallOptions options)
         {
-            var tx = request.Tx;
-            var data = tx.ToBase64();
-
-            // Console.WriteLine("DeliverTx: ${data}");
-
-            if (tx.Length == 0)
-            {
-                return Task.FromResult(new ResponseDeliverTx
-                {
-                    Code = CodeType.BadNonce,
-                    Log = "Tansaction is emptyr"
-                });
-            }
-            else if (tx.Length <= 4)
-            {
-                int x = Int32.Parse(tx.ToString());
-
-                if (x != txCount)
-                {
-                    return Task.FromResult(new ResponseDeliverTx
-                    {
-                        Code = CodeType.BadNonce,
-                        Log = "Invalid nonce"
-                    });
-                }
-            }
-            else
-            {
-                return Task.FromResult(new ResponseDeliverTx
-                {
-                    Code = CodeType.BadNonce,
-                    Log = "Got a bad value"
-                });
-            }
-
-            txCount += 1;
-
-            // Console.WriteLine("DeliverTx - txCount increment: ${txCount}");
-
-            return Task.FromResult(new ResponseDeliverTx
-            {
-                Code = CodeType.Ok
-            });
+            return base.CheckTx(request, options);
         }
 
-
-        public override Task<ResponseCommit> Commit(RequestCommit request, ServerCallContext context)
+        public override ResponseCommit Commit(RequestCommit request, CallOptions options)
         {
-            hashCount += 1;
-
-            if (txCount == 0)
-            {
-                return Task.FromResult(new ResponseCommit
-                {
-                    Code = CodeType.Ok
-                });
-            }
-            else
-            {
-                using (MemoryStream data = new MemoryStream())
-                {
-                    var bd = Encoding.UTF8.GetBytes(txCount.ToString());
-                    data.Write(bd, 0, bd.Length - 1);
-
-                    return Task.FromResult(new ResponseCommit
-                    {
-                        Code = CodeType.Ok,
-                        Data = ByteString.FromStream(data)
-                    });
-                }
-            }
+            return base.Commit(request, options);
         }
 
-        public override Task<ResponseEcho> Echo(RequestEcho request, ServerCallContext context)
+        public override ResponseDeliverTx DeliverTx(RequestDeliverTx request, Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            // Console.WriteLine("Echo: " + request.Message);
-            return Task.FromResult(new ResponseEcho
-            {
-                Message = request.Message
-            });
+            return base.DeliverTx(request, headers, deadline, cancellationToken);
         }
 
-        public override Task<ResponseInfo> Info(RequestInfo request, ServerCallContext context)
+        public override ResponseDeliverTx DeliverTx(RequestDeliverTx request, CallOptions options)
         {
-            return Task.FromResult(new ResponseInfo
-            {
-                Data = String.Format("hashes:{0}, txs:{1}",hashCount, txCount)
-            });
+            return base.DeliverTx(request, options);
         }
 
-        public override Task<ResponseQuery> Query(RequestQuery request, ServerCallContext context)
+        public override ResponseEcho Echo(RequestEcho request, CallOptions options)
         {
-            //var data = request.Data.;
-
-            // Console.WriteLine("Query: " + request.Data);
-            return Task.FromResult(new ResponseQuery
-            {
-                Code = CodeType.Ok
-            });
+            return base.Echo(request, options);
         }
 
-        public override Task<ResponseSetOption> SetOption(RequestSetOption request, ServerCallContext context)
+        public override ResponseEndBlock EndBlock(RequestEndBlock request, CallOptions options)
         {
-            // Console.WriteLine("SetOption: " + request.GetHashCode());
-            return Task.FromResult(new ResponseSetOption());
+            return base.EndBlock(request, options);
         }
 
-        public override Task<ResponseInitChain> InitChain(RequestInitChain request, ServerCallContext context)
+        public override ResponseFlush Flush(RequestFlush request, CallOptions options)
         {
-            // Console.WriteLine("Echo: " + request.Message);
-            return Task.FromResult(new ResponseInitChain());
+            return base.Flush(request, options);
+        }
+
+        public override ResponseInfo Info(RequestInfo request, CallOptions options)
+        {
+            return base.Info(request, options);
+        }
+
+        public override ResponseInitChain InitChain(RequestInitChain request, CallOptions options)
+        {
+            return base.InitChain(request, options);
+        }
+
+        public override ResponseQuery Query(RequestQuery request, CallOptions options)
+        {
+            return base.Query(request, options);
+        }
+
+        public override ResponseSetOption SetOption(RequestSetOption request, CallOptions options)
+        {
+            return base.SetOption(request, options);
         }
     }
 }

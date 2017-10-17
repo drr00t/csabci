@@ -13,18 +13,18 @@ namespace Tendermint.Abci.Examples
         const Int32 Port = 46658;
         static void Main(string[] args)
         {
-            Server server = new Server
-            {
-                Services = { ABCIApplication.BindService(new CounterApp()) },
-                Ports = { new ServerPort("127.0.0.1", Port, ServerCredentials.Insecure) }
-            };
-            server.Start();
+            //Server server = new Server
+            //{
+            //    Services = { ABCIApplication.BindService(new CounterApp()) },
+            //    Ports = { new ServerPort("127.0.0.1", Port, ServerCredentials.Insecure) }
+            //};
+            //server.Start();
 
-            Console.WriteLine("Greeter server listening on port " + Port);
-            Console.WriteLine("Press any key to stop the server...");
-            Console.Read();
+            //Console.WriteLine("Greeter server listening on port " + Port);
+            //Console.WriteLine("Press any key to stop the server...");
+            //Console.Read();
 
-            server.ShutdownAsync().Wait();
+            //server.ShutdownAsync().Wait();
         }
     }
 }
