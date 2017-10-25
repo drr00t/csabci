@@ -6,7 +6,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abci", "src\Abci\Abci.cspro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abci.Tests", "src\Abci.Tests\Abci.Tests.csproj", "{BD1B766A-4C79-4DE9-9BB5-A8260A8850BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "counter", "src\Examples\Counter\counter.csproj", "{70D018D3-3A02-4BD3-AEBD-943F907F9141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Counter", "src\Examples\Counter\Counter.csproj", "{70D018D3-3A02-4BD3-AEBD-943F907F9141}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CounterClient", "src\Examples\CounterClient\CounterClient.csproj", "{C06AD9C9-C3CE-4D79-9A86-298D1DDEEA3A}"
 EndProject

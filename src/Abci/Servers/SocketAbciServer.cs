@@ -8,19 +8,19 @@ using Tendermint.Abci.Types;
 
 namespace Tendermint.Abci.Servers
 {
-    public class SocketAbciServer
+    public class AbciSocketServer
     {
         TcpListener _listener;
         CancellationToken _cancellation;
 
         public IPEndPoint EndpointListen { get; private set; }
 
-        public SocketAbciServer(int port)
+        public AbciSocketServer(int port)
             :this(new IPEndPoint(IPAddress.Any, port))
         {
         }
 
-        public SocketAbciServer(IPEndPoint endpoint)
+        public AbciSocketServer(IPEndPoint endpoint)
         {
             EndpointListen = endpoint;
 
@@ -29,10 +29,12 @@ namespace Tendermint.Abci.Servers
 
         public async Task Start()
         {
-
-            //var client = await _listener.AcceptTcpClientAsync()
-            //    .ContinueWith<TcpClient>(HandleConnection, TaskContinuationOptions.LongRunning);
-            _listener.Start();
+            while(true)
+            {
+                var client = await _listener.AcceptTcpClientAsync();
+                //    .ContinueWith<TcpClient>(HandleConnection, TaskContinuationOptions.LongRunning);
+                _listener.Start();
+            }            
         }
 
         //private async Task<Request> HandleConnection(TcpClient client)
