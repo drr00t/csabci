@@ -13,8 +13,6 @@ namespace Tendermint.Abci.Examples
         const Int32 Port = 46658;
         static void Main(string[] args)
         {
-            Console.WriteLine("New client message: ${request.CalculateSize} type ${request.ValueCase}");
-            new Tendermint.Abci.Servers.Socket.AbciSocket(Port).Start().Wait();
             //Server server = new Server
             //{
             //    Services = { ABCIApplication.BindService(new CounterApp()) },

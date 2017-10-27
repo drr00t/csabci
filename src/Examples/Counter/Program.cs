@@ -15,21 +15,25 @@ namespace Tendermint.Abci.Examples.Counter
         const Int32 Port = 46658;
         static void Main(string[] args)
         {
-            // Server Startup
-            GrpcEnvironment.SetLogger(new ConsoleLogger()); // show inner log
 
-            Server server = new Server
-            {
-                Services = { ABCIApplication.BindService(new CounterApp()) },
-                Ports = { new ServerPort("127.0.0.1", Port, ServerCredentials.Insecure) }
-            };
-            server.Start();
+            //// Server Startup
+            //GrpcEnvironment.SetLogger(new ConsoleLogger()); // show inner log
 
-            Console.WriteLine("Greeter server listening on port " + Port);
+            //Server server = new Server
+            //{
+            //    Services = { ABCIApplication.BindService(new CounterApp()) },
+            //    Ports = { new ServerPort( "127.0.0.1", Port, ServerCredentials.Insecure) }
+            //};
+            //server.Start();
+
+            Console.WriteLine("CounterApp server listening on port " + Port);
             Console.WriteLine("Press any key to stop the server...");
+
+            new Tendermint.Abci.Servers.Socket.AbciSocket(46658).Start().Wait();
+
             Console.Read();
 
-            server.ShutdownAsync().Wait();
+            //server.ShutdownAsync().Wait();
         }
     }
 }

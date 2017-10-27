@@ -9,54 +9,26 @@ using Tendermint.Abci.Types;
 
 namespace Tendermint.Abci.Servers.Socket
 {
-    public class AbciSocket
+    public class TcSocketConnection
     {
-        TcpListener _listener;
-        CancellationToken _cancellation;
+        public TcpClient Connection { get; private set; } 
+        public ConnectionTypes ConnectionType { get; set; }
 
-        public IPEndPoint EndPointListen { get; private set; }
+        public enum ConnectionTypes { NoNamed = 0x00, Consensus = 0x01, Query = 0x02, Mempool = 0x03, }
 
-        public AbciSocket(int port)
-            :this(new IPEndPoint(IPAddress.Any, port))
+
+        public TcSocketConnection(TcpClient connection)
         {
-        }
-
-        public AbciSocket(IPEndPoint endpoint)
-        {
-            EndPointListen = endpoint;
-
-            _listener = new TcpListener(EndPointListen);
-        }
-
-        public Task Start()
-        {
-            return Task.Run(() => {
-                    _listener.Start();
-                while (true)
-                {
-                    _listener.AcceptTcpClientAsync()
-                            .ContinueWith<TcSocketConnection>(HandleConnection);
-                }
-            });
+            Connection = connection;
+            ConnectionType = ConnectionTypes.NoNamed;
 
         }
 
-        private TcSocketConnection HandleConnection(Task<TcpClient> clientTask)
+
+        public Task<Request> HandleRequest()
         {
-
-            var client = clientTask.Result;
-
-            
-
-            //HandleRequest(client);
-
-            return new TcSocketConnection(client);
-        }
-
-        private Task<Request> HandleRequest(TcSocketConnection client)
-        {
-            var inputStream = new CodedInputStream(client.Connection.GetStream());
-            var outputStream = new CodedOutputStream(client.Connection.GetStream());
+            var inputStream = new CodedInputStream(Connection.GetStream());
+            var outputStream = new CodedOutputStream(Connection.GetStream());
 
             //while(client.Connected)
             //{
@@ -72,7 +44,7 @@ namespace Tendermint.Abci.Servers.Socket
             try
             {
                 var request = Request.Parser.ParseFrom(inputStream.ReadBytes());
-                Console.WriteLine("message: {0} type {1}", request.CalculateSize(), request.ValueCase);
+                Console.WriteLine("New client message: {0} type {1}", request.CalculateSize(), request.ValueCase);
                 outputStream.WriteBytes(inputStream.ReadBytes());
             }
             catch(Exception ex)
