@@ -16,12 +16,13 @@ namespace Tendermint.Abci.Servers.Socket
 
         public enum ConnectionTypes { NoNamed = 0x00, Consensus = 0x01, Query = 0x02, Mempool = 0x03, }
 
+        public Task ReceiveTask { get; private set;}
 
         public TcSocketConnection(TcpClient connection)
         {
             Connection = connection;
             ConnectionType = ConnectionTypes.NoNamed;
-
+            ReceiveTask = Task.Run(HandleRequest);
         }
 
 
@@ -36,10 +37,10 @@ namespace Tendermint.Abci.Servers.Socket
 
             Console.WriteLine("message length: {0}",varintLength);
 
-            if (varintLength > 4)
-            {
-                throw new System.ArgumentOutOfRangeException("varint");
-            }
+            // if (varintLength > 4)
+            // {
+            //     throw new System.ArgumentOutOfRangeException("varint");
+            // }
 
             try
             {
@@ -49,33 +50,9 @@ namespace Tendermint.Abci.Servers.Socket
             }
             catch(Exception ex)
             {
-
+                
             }
 
-
-
-
-
-
-            //byte[] msgLengthField = new byte[varintLength];
-            //stream.ReadAsync(msgLengthField, 1, varintLength);
-
-            //Int64 msgLengthLong = BitConverter.ToInt64(msgLengthField, 0);
-
-            //if (msgLengthLong > Int32.MaxValue)
-            //{
-            //    throw new System.ArgumentOutOfRangeException("messageLength");
-            //}
-
-            //Int32 messageLength = (Int32)msgLengthLong;
-            //CodedInputStream.
-            //Request request = Request.Parser.ParseFrom()
-            //}
-
-
-
-
-            //if(varintLength)
             return null;
         }
 

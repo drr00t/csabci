@@ -10,10 +10,18 @@ namespace Tendermint.Abci.Servers
 {
     public class AbciSocketServer
     {
+        private readonly static Int32 DEFAULT_LISTEN_SOCKET_PORT = 46658;
+
         TcpListener _listener;
         CancellationToken _cancellation;
 
         public IPEndPoint EndpointListen { get; private set; }
+
+        public AbciSocketServer()
+        :this(DEFAULT_LISTEN_SOCKET_PORT)
+        {
+
+        }
 
         public AbciSocketServer(int port)
             :this(new IPEndPoint(IPAddress.Any, port))

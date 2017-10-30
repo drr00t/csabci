@@ -13,6 +13,10 @@ namespace Tendermint.Abci.Servers.Socket
     {
         TcpListener _listener;
         CancellationToken _cancellation;
+        
+        static ManualResetEvent readness = new ManualResetEvent(false); 
+
+
 
         public IPEndPoint EndPointListen { get; private set; }
 
@@ -34,8 +38,12 @@ namespace Tendermint.Abci.Servers.Socket
                     _listener.Start();
                 while (true)
                 {
+                    readness.Reset();
+
                     _listener.AcceptTcpClientAsync()
                             .ContinueWith<TcSocketConnection>(HandleConnection);
+
+                    readness.WaitOne();
                 }
             });
 
@@ -46,7 +54,7 @@ namespace Tendermint.Abci.Servers.Socket
 
             var client = clientTask.Result;
 
-            
+            readness.Set();
 
             //HandleRequest(client);
 
