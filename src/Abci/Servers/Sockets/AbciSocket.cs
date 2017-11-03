@@ -32,7 +32,7 @@ namespace Tendermint.Abci.Servers.Sockets
             _listener = new TcpListener(EndPointListen);
         }
 
-        public Task Start()
+        public Task Accept()
         {
             return Task.Run(() => {
                     _listener.Start();
@@ -49,14 +49,13 @@ namespace Tendermint.Abci.Servers.Sockets
 
         }
 
+
         private TcSocketConnection HandleConnection(Task<TcpClient> clientTask)
         {
 
             var client = clientTask.Result;
 
             readness.Set();
-
-            //HandleRequest(client);
 
             return new TcSocketConnection(client);
         }

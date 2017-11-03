@@ -1,9 +1,11 @@
 ﻿using Google.Protobuf;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using Tendermint.Abci.Servers.Sockets;
 using Tendermint.Abci.Types;
 
 namespace Tendermint.Abci.Servers
@@ -12,8 +14,9 @@ namespace Tendermint.Abci.Servers
     {
         private readonly static Int32 DEFAULT_LISTEN_SOCKET_PORT = 46658;
 
-        TcpListener _listener;
+        AbciSocket _socket;
         CancellationToken _cancellation;
+        IList<TcSocketConnection> _activeCOnnections;
 
         public IPEndPoint EndpointListen { get; private set; }
 
@@ -32,16 +35,16 @@ namespace Tendermint.Abci.Servers
         {
             EndpointListen = endpoint;
 
-            _listener = new TcpListener(EndpointListen);
+            _activeCOnnections = new List<TcSocketConnection>(3);
+            _socket = new AbciSocket(EndpointListen);
         }
 
-        public async Task Start()
+        public Task Start()
         {
             while(true)
             {
-                var client = await _listener.AcceptTcpClientAsync();
+                var client = _socket.Accept();
                 //    .ContinueWith<TcpClient>(HandleConnection, TaskContinuationOptions.LongRunning);
-                _listener.Start();
             }            
         }
 
