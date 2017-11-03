@@ -2,7 +2,7 @@ using System;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using Tendermint.Abci.Servers.Socket;
+using Tendermint.Abci.Servers.Sockets;
 using Xunit;
 
 namespace Abci.Tests
@@ -12,7 +12,7 @@ namespace Abci.Tests
         [Fact]
         public void AcceptCOnnections()
         {
-            var server = new Tendermint.Abci.Servers.Socket.AbciSocket(46658).Start();
+            var server = new Tendermint.Abci.Servers.Sockets.AbciSocket(46658).Start();
 
             var client = new TcpClient();
 

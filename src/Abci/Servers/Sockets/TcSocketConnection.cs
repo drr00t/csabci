@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Tendermint.Abci.Types;
 
-namespace Tendermint.Abci.Servers.Socket
+namespace Tendermint.Abci.Servers.Sockets
 {
     public class TcSocketConnection
     {
