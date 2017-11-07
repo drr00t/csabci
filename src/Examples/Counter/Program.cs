@@ -29,7 +29,7 @@ namespace Tendermint.Abci.Examples.Counter
             Console.WriteLine("CounterApp server listening on port " + Port);
             Console.WriteLine("Press any key to stop the server...");
 
-            new Tendermint.Abci.Servers.Sockets.AbciSocket(46658).Start().Wait();
+            new Tendermint.Abci.Servers.AbciSocketServer(46658).Start(); //.Wait();
 
             Console.Read();
 

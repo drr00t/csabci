@@ -11,6 +11,7 @@ namespace Tendermint.Abci.Servers.Sockets
 {
     public class TcSocketConnection
     {
+        private bool alreadyNamed = false;
         public TcpClient Connection { get; private set; } 
         public ConnectionTypes ConnectionType { get; set; }
 
@@ -22,82 +23,68 @@ namespace Tendermint.Abci.Servers.Sockets
         {
             Connection = connection;
             ConnectionType = ConnectionTypes.NoNamed;
-            ReceiveTask = Task.Run(HandleRequest);
+            ReceiveTask = Task.FromResult(HandleRequest());
         }
 
 
-        public Task<Request> HandleRequest()
+        public Request HandleRequest()
         {
             var inputStream = new CodedInputStream(Connection.GetStream());
             var outputStream = new CodedOutputStream(Connection.GetStream());
 
-            //while(client.Connected)
-            //{
-            Int32 varintLength = inputStream.ReadLength();
-
-            Console.WriteLine("message length: {0}",varintLength);
-
-            // if (varintLength > 4)
-            // {
-            //     throw new System.ArgumentOutOfRangeException("varint");
-            // }
-
-            try
+            while (Connection.Connected)
             {
-                var request = Request.Parser.ParseFrom(inputStream.ReadBytes());
-                Console.WriteLine("New client message: {0} type {1}", request.CalculateSize(), request.ValueCase);
-                outputStream.WriteBytes(inputStream.ReadBytes());
-            }
-            catch(Exception ex)
-            {
-                
+                Int32 varintLength = inputStream.ReadLength();
+
+                Console.WriteLine("message length: {0}", varintLength);
+
+                // if (varintLength > 4)
+                // {
+                //     throw new System.ArgumentOutOfRangeException("varint");
+                // }
+
+                //try
+                //{
+                    var request = Request.Parser.ParseFrom(inputStream.ReadBytes());
+                    //Console.WriteLine("New client message: {0} type {1}", request.CalculateSize(), request.ValueCase);
+                    outputStream.WriteBytes(inputStream.ReadBytes());
+                    UpdateConnectionName(request);
+
+                return request;
+                //return request;
+                //}
+                //catch (Exception ex)
+                //{
+                //    throw ex;
+                //}
+
             }
 
             return null;
         }
 
-        //private async Task<Request> HandleConnection(TcpClient client)
-        //{
-        //    var buffer = new byte[8192];
+        public void UpdateConnectionName(Request request)
+        {
+            switch(request.ValueCase)
+            {
+                case Request.ValueOneofCase.CheckTx:
+                    ConnectionType = ConnectionTypes.Mempool;
+                    alreadyNamed = true;
+                    break;
+                case Request.ValueOneofCase.Commit:
+                case Request.ValueOneofCase.DeliverTx:
+                    ConnectionType = ConnectionTypes.Consensus;
+                    alreadyNamed = true;
+                    break;
+                case Request.ValueOneofCase.Query:
+                case Request.ValueOneofCase.Info:
+                    ConnectionType = ConnectionTypes.Query;
+                    alreadyNamed = true;
+                    break;
+            }
 
-        //    using (var ns = client.GetStream())
-        //    {
-        //        var byteCount = await ns.ReadAsync(buffer, 0, buffer.Length);
-        //        var bs = Google.Protobuf.ByteString.FromStream(ns);
-
-        //        var request = Request.Parser.ParseFrom(bs);
-
-        //        switch (request.ValueCase)
-        //        {
-        //            case Request.ValueOneofCase.CheckTx:
-        //                break;
-        //            case Request.ValueOneofCase.DeliverTx:
-        //                break;
-        //            case Request.ValueOneofCase.Commit:
-        //                break;
-        //            case Request.ValueOneofCase.BeginBlock:
-        //                break;
-        //            case Request.ValueOneofCase.EndBlock:
-        //                break;
-        //            case Request.ValueOneofCase.InitChain:
-        //                break;
-        //            case Request.ValueOneofCase.Info:
-        //                break;
-        //            case Request.ValueOneofCase.Query:
-        //                break;
-        //            case Request.ValueOneofCase.SetOption:
-        //                break;
-
-        //        }
-
-        //        Console.WriteLine("[Server] Reading from client");
-        //    }
-        //}
-
-        //public async Task HandleRequest(Request request)
-        //{
-
-        //}
+            Console.WriteLine("Connection name : {0} type {1}", request.CalculateSize(), ConnectionType);
+        }
     }    
 }
 

@@ -39,13 +39,12 @@ namespace Tendermint.Abci.Servers
             _socket = new AbciSocket(EndpointListen);
         }
 
-        public Task Start()
+        public void Start()
         {
             while(true)
-            {
-                var client = _socket.Accept();
+                _socket.Accept();
                 //    .ContinueWith<TcpClient>(HandleConnection, TaskContinuationOptions.LongRunning);
-            }            
+          
         }
 
         //private async Task<Request> HandleConnection(TcpClient client)
